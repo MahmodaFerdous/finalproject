@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Courses</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Courses</h2>   
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Course name</th>
+        <th>Course code</th>
+        <th>No of student</th>
+        <th>Option</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0; i<courses.length; i++) {%>
+        <tr >
+            <td><%= courses[i].cname %></td>
+            <td><%= courses[i].acode %></td>
+            <td><%= courses[i].nstudent %></td>
+            <td><button type="button" onclick="window.location.href = '/enroll_student/?cid=<%= courses[i]._id %>' " >Enroll student</button></td>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>
+  <button type="button" onclick="window.location.href = '/add_course' " >Add course</button>
+</div>
+
+</body>
+</html>
